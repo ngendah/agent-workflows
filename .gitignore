@@ -1,0 +1,35 @@
+# IntelliJ IDEA project files
+.idea/
+!.idea/workspace.xml
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/vcs.xml
+!.idea/libraries/
+
+# Build artifacts
+target/
+out/
+build/
+dist/
+
+# Maven/Gradle specific
+.gradle/
+*.iml
+*.ipr
+*.iws
+
+# Log files
+*.log
+
+# Compilation outputs
+*.class
+*.jar
+*.war
+*.ear
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# User-specific settings (e.g., run configurations)
+.idea/runConfigurations/
