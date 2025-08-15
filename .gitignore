@@ -33,3 +33,19 @@ Thumbs.db
 
 # User-specific settings (e.g., run configurations)
 .idea/runConfigurations/
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variables file
+.env
+
+# Ignore build output
+dist/
+build/
+
+# Ignore IDE-specific files (e.g., VS Code)
+.vscode/
