@@ -1,15 +1,15 @@
 # 🤖 Agent Workflows
 
-A set of **LangGraph** workflow examples — without the clutter.
+A set of simplified **LangGraph** workflow examples.
 
 ---
 
 ## ✨ Why This Exists
 
 LangGraph can feel daunting when you're new.
-This repo attempts to breaks down graph-based thinking into **simple examples** — without the LLMs, Prompt-Templates or Agents.
+This repo attempts to breaks down graph-based thinking into **simple examples** —  without LLMs, Tools, and Prompt-Templates.
 
-Each workflow showcases a stripped down **graph patterns**.
+Each workflow showcases a stripped down **graph pattern**.
 
 ---
 
