@@ -1,8 +1,7 @@
 import { StateGraph, MessagesAnnotation } from '@langchain/langgraph'
 import { writeFileSync } from 'node:fs'
-import path from 'node:path'
 
-export async function complex(outDir: string) {
+export async function complex() {
   async function agent1(
     _: typeof MessagesAnnotation.State
   ): Promise<Partial<typeof MessagesAnnotation.State>> {
@@ -59,6 +58,6 @@ export async function complex(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'complex.png')
+  const filePath = './build/complex.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }

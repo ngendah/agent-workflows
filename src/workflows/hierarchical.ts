@@ -4,9 +4,8 @@ import {
   Annotation,
 } from '@langchain/langgraph'
 import { writeFileSync } from 'node:fs'
-import path from 'node:path'
 
-export async function hierarchicalA(outDir: string) {
+export async function hierarchicalA() {
   enum AgentStateCondition {
     Failed = 'Failed',
     Complete = 'Complete',
@@ -55,11 +54,11 @@ export async function hierarchicalA(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'hierarchicalA.png')
+  const filePath = './build/hierarchicalA.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }
 
-export async function hierarchicalB(outDir: string) {
+export async function hierarchicalB() {
   async function agent1(
     _: typeof MessagesAnnotation.State
   ): Promise<Partial<typeof MessagesAnnotation.State>> {
@@ -107,11 +106,11 @@ export async function hierarchicalB(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'hierarchicalB.png')
+  const filePath = './build/hierarchicalB.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }
 
-export async function hierarchicalC(outDir: string) {
+export async function hierarchicalC() {
   enum AgentStateCondition {
     Stop = 'Stop',
     Continue = 'Continue',
@@ -159,6 +158,6 @@ export async function hierarchicalC(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'hierarchicalC.png')
+  const filePath = './build/hierarchicalC.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }

@@ -1,8 +1,7 @@
 import { StateGraph, MessagesAnnotation } from '@langchain/langgraph'
 import { writeFileSync } from 'node:fs'
-import path from 'node:path'
 
-export async function supervisor(outDir: string) {
+export async function supervisor() {
   async function agent1(
     _: typeof MessagesAnnotation.State
   ): Promise<Partial<typeof MessagesAnnotation.State>> {
@@ -36,6 +35,6 @@ export async function supervisor(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'supervisor.png')
+  const filePath = './build/supervisor.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }

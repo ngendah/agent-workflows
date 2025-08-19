@@ -1,8 +1,7 @@
 import { StateGraph, MessagesAnnotation } from '@langchain/langgraph'
 import { writeFileSync } from 'node:fs'
-import path from 'node:path'
 
-export async function networkA(outDir: string) {
+export async function networkA() {
   async function agent1(
     _: typeof MessagesAnnotation.State
   ): Promise<Partial<typeof MessagesAnnotation.State>> {
@@ -43,11 +42,11 @@ export async function networkA(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'networkA.png')
+  const filePath = './build/networkA.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }
 
-export async function networkB(outDir: string) {
+export async function networkB() {
   async function agent1(
     _: typeof MessagesAnnotation.State
   ): Promise<Partial<typeof MessagesAnnotation.State>> {
@@ -72,6 +71,6 @@ export async function networkB(outDir: string) {
   const image = await graph.drawMermaidPng()
   const arrayBuffer = await image.arrayBuffer()
 
-  const filePath = path.join(outDir, 'networkB.png')
+  const filePath = './build/networkB.png'
   writeFileSync(filePath, new Uint8Array(arrayBuffer))
 }
